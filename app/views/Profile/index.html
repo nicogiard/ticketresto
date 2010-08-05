@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+#{set title:'Profil - L&#39;Addition SVP!' /}
+
+#{form @Profile.save(), name:'saveProfile'}
+	#{ifErrors}
+    <p class="error">
+        ${errors[0]}
+    </p>
+    #{/ifErrors}
+    <p>
+        <label for="defaultTicketValue">Ticket Resto pr&eacute;f&eacute;r&eacute;:</label>
+        <input type="number" id="defaultTicketValue" name="defaultTicketValue" value="${defaultTicketValue}"><span>&nbsp;&euro;</span>
+    </p>
+    <p class="buttons">
+        <a href="#" onclick="document.saveProfile.submit();">Enregistrer</a>
+    </p>
+#{/form}

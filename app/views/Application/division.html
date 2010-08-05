@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'Division - L&#39;Addition SVP!' /}
+#{set 'moreScripts'}
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".keyEventListener").keypress(function (e) {  
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {  
+            $("#division").submit();
+        } });  
+    });  
+	</script>
+#{/set}
+
+#{form @Application.calculateDivision(), name:'division', id:'division'}
+    #{ifErrors}
+        <p class="error">
+            ${errors[0]}
+        </p>
+    #{/ifErrors}
+    <p>
+        <img src="@{'/public/images/personnes.png'}" class="minicon" id="logo-personnes" alt="personnes" ><label for="nombrePart">Nombre de personne: </label>
+        <input type="number" name="nombrePart" id="nombrePart" class="keyEventListener" value="${params.nombrePart}" />
+    </p>
+    <p>
+        <img src="@{'/public/images/favicon.png'}" class="minicon" id="logo-addition" alt="addition" ><label for="totalAddition">Total de l'addition: </label>
+        <input type="number" name="totalAddition" id="totalAddition" class="keyEventListener" value="${params.totalAddition}" /><span>&nbsp;&euro;</span>
+    </p>
+    <p class="buttons">
+        <a href="#" onclick="document.division.submit();">Calculer</a>
+    </p>
+#{/form}
+
+#{if flash.success}
+    <p class="success">${flash.success}</p>
+#{/if}

@@ -1,0 +1,172 @@
+header, nav, section, footer{  
+    display: block;  
+}
+body { 
+	background:url("../images/pinstripes-classic.gif") repeat scroll 0 0 #FFF;
+	font:12px Helvetica;
+	margin:0;
+}
+a {	text-decoration:none; }
+header {
+	background:url("../images/head-fade-bk.png") repeat-x scroll 0 0 #000;
+	border-bottom:1px solid #1E1E1E;
+	font-size:19px;
+	height:29px;
+	margin:0;
+	overflow:hidden;
+	padding: 10px 0 4px 10px;
+	text-shadow:-1px -1px 1px #242424;
+	white-space:nowrap;
+}
+header a {
+	color:#EEE;
+	font-family:HelveticaNeue-Bold,sans-serif;
+	font-weight:bold;
+	letter-spacing:-1px;
+	position:relative;
+	text-decoration:none;
+}
+header img#logo-icon{
+	bottom:1px;
+	float:left;
+	height:28px;
+	margin-right:7px;
+	max-width:30px;
+	padding:0;
+	position:relative;
+	width:28px;
+}
+nav {
+	background-color:#444;
+	border-bottom:1px solid #1B1B1B;
+	border-top:1px solid #575757;
+	font-size:13px;
+	height:26px;
+	margin-bottom:-1px;
+	padding-left:10px;
+	padding-top:3px;
+}
+nav a {
+	color:#999;
+	display:inline-block;
+	font-weight:bold;
+	margin:0;
+	padding:2px 8px 7px;
+	text-shadow:0 -1px 1px #111111;
+}
+nav a:hover, nav a:active {
+	color:#FFFFFF !important;
+}
+nav a.selected {
+	background-color:#2C2C2C;
+	border-color:#1B1B1B #1B1B1B #2C2C2C;
+	border-style:solid;
+	border-width:1px;
+	color:#FFF !important;
+	margin-left:-1px;
+	margin-right:-1px;
+	position:relative;
+	text-shadow:0 -1px 1px #000000;
+	z-index:1;
+}
+nav .right {
+	float: right;
+	padding:0 8px 0 0;
+}
+nav img#logout-icon {
+	float:left;
+	height:20px;
+	width:20px;
+}
+#drop-fade  {
+	background:none repeat scroll 0 0 #333;
+	border-top:1px solid #3E3E3E;
+	display:block;
+	height:auto;
+	overflow:hidden;
+	position:relative;
+	text-align:right;
+	width:100%;
+}
+.content {
+	margin-top:10px;
+	position:relative;
+}
+.panel {
+	background-color:#FFF;
+	border:1px solid #B1B1B1;
+	margin-bottom:12px;
+	margin-left:5px;
+	margin-right:5px;
+	padding:10px;
+	position:relative;
+	z-index:1;
+}
+.panel .error {
+	background-color:#FED4D2;
+	border:1px solid red;
+	font-weight:bold;
+	padding:8px;
+	text-align:center;
+	text-shadow:0 1px 0 #FFECEC;
+}
+.panel .fieldError {
+    color: red;
+}
+.panel p.field input[type=text], .panel p.field input[type=password] {
+	width:130px;
+}
+.panel img.minicon {
+	float:left;
+	margin-right:5px;
+}
+.panel label {
+	float:left;
+	margin-top:3px;
+	width:130px;
+}
+.panel input[type=text], .panel input[type=number] {
+	width:50px;
+}
+.panel .buttons{
+	-webkit-box-shadow: rgba(0, 0, 0, 0.199219) 1px 1px 3px;
+	-webkit-box-sizing: border-box;
+	background-color: #4C4D4E;
+	background: -webkit-gradient(linear, 0% 0, 0% 100%, from(#4C4D4E), to(#404142));
+	border: 1px solid #333;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	font-size: 14px;
+	padding: 11px 10px 14px;
+	text-align: center;
+}
+.panel .buttons a {
+	color: white;
+	font-weight: bold;
+	line-height: 16px;
+	margin: -11px -10px -14px;
+	padding: 11px 10px 14px;
+	text-shadow:0 -1px 1px #111111;
+}
+.panel .success {
+	background-color:#C8FFA4;
+	border:1px solid #348300;
+	font-weight:bold;
+	padding:8px;
+	text-align:center;
+	text-shadow:0 1px 0 #FFECEC;
+}
+footer {
+	color:#475D79;
+	font-size:10px;
+	font-weight:bold;
+	line-height:13px;
+	margin-top:20px;
+	padding:0 0 10px;
+	text-align:center;
+	text-shadow:1px 1px 0 #EEE;
+}
+footer p {
+	margin:0;
+	padding:0 25px 5px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>#{get 'title' /}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" type="text/css" media="screen" href="@{'/public/stylesheets/main.css'}">
+    #{get 'moreStyles' /}
+    <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+    <link rel="apple-touch-icon" href="@{'/public/images/apple-touch-icon.png'}"/>
+    <script src="@{'/public/javascripts/jquery-1.4.2.min.js'}" type="text/javascript" charset="utf-8"></script>
+    #{get 'moreScripts' /}
+    <!--[if lte IE 8]>
+	<script src="@{'/public/javascripts/html5.js'}" type="text/javascript" charset="utf-8"></script>
+	<![endif]-->
+</head>
+<body>
+	<header>
+		<img alt="L'Addition SVP!" src="@{'/public/images/favicon.png'}" id="logo-icon">
+		<a href="@{Application.indexTicket()}">L'Addition SVP!</a>
+	</header>
+	<nav>
+		<a href="@{Application.indexTicket()}" class="${request.action =~ 'Application.*Ticket' ? 'selected' : ''}">Ticket Resto</a>
+		<a href="@{Application.indexDivision()}" class="${request.action =~ 'Application.*Division' ? 'selected' : ''}">Division</a>
+		
+		#{if session.contains("username")}
+		<a href="@{Profile.index()}" class="${request.action =~ 'Profile.index' ? 'selected' : ''}">Profil</a>
+		<a href="@{Secure.logout()}" class="right"><img src="@{'/public/images/logout.png'}" id="logout-icon" alt="Se d&eacute;connecter" title="Se d&eacute;connecter"></a>
+		#{/if}
+		#{else}
+		<a href="@{Secure.login()}">Connexion</a>
+		#{/else}
+	</nav>
+	<div id="drop-fade"></div>
+	<section class="content panel">
+		#{doLayout /}
+	</section>
+	<footer>
+		<p>All content Copyright &copy; <a href="http://www.noocodecommit.com" target="_blank">NooCodeCommit.com</a></p>
+		<p>Powered by <a href="http://www.playframework.org/" target="_blank">Play! Framework</a></p>
+	</footer>
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try{
+			var pageTracker = _gat._getTracker("UA-110826-9");
+			pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+</body>
+</html>

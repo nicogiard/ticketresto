@@ -1,0 +1,40 @@
+#{extends 'main.html' /}
+#{set title:'Ticket Resto - L&#39;Addition SVP!' /}
+#{set 'moreScripts'}
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".keyEventListener").keypress(function (e) {  
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {  
+            $("#ticket").submit();
+        } });  
+    });  
+	</script>
+#{/set}
+
+#{form @Application.calculateTicket(), name:'ticket', id:'ticket'}
+    #{ifErrors}
+        <p class="error">
+            ${errors[0]}
+        </p>
+    #{/ifErrors}
+    <p>
+        <img src="@{'/public/images/TicketRestaurant.png'}" class="minicon" id="logo-ticketResto" alt="ticketResto" ><label for="valeurTicket">Valeur du ticket: </label>
+        <input type="number" name="valeurTicket" id="valeurTicket" class="keyEventListener" value="${defaultTicketValue != null ? defaultTicketValue : params.valeurTicket}" /><span>&nbsp;&euro;</span>
+    </p>
+    <p>
+        <img src="@{'/public/images/favicon.png'}" class="minicon" id="logo-addition" alt="addition" ><label for="totalAddition">Total de l'addition: </label>
+        <input type="number" name="totalAddition" id="totalAddition" class="keyEventListener" value="${params.totalAddition}" /><span>&nbsp;&euro;</span>
+    </p>
+    <p class="buttons">
+        <a href="#" onclick="document.ticket.submit();">Calculer</a>
+    </p>
+#{/form}
+
+#{if flash.success}
+    <p class="success">${flash.success}</p>
+#{/if}
+#{if !session.contains("username")}
+	<section class="panel">
+		<p>Pour sauvegarder votre valeur de ticket restaurant pr&eacute;f&eacute;r&eacute; et ainsi gagner du temps, n'h&eacute;sitez pas &agrave; vous <a href="@{Application.register()}" class="${classProfile}">enregistrer</a>.</p>
+	</section>
+#{/if}

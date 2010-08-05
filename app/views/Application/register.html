@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'S&#39;enregistrer - L&#39;Addition SVP!' /}
+#{set 'moreScripts'}
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".keyEventListener").keypress(function (e) {  
+        if ((e.which && e.which == 13) || (e.keyCode && e.keyCode == 13)) {  
+            $("#register").submit();
+        } });  
+    });  
+	</script>
+#{/set}
+
+#{form @Application.saveRegister(), name:'register', id:'register'}
+    <p class="field">
+        <label for="email">Email:</label>
+        <input type="text" id="email" class="keyEventListener" name="user.email" value="${user?.email}">
+        <span class="fieldError">${errors.forKey('user.email')}</span>
+    </p>
+    <p class="field">
+        <label for="fullname">Nom complet:</label>
+        <input type="text" id="fullname" class="keyEventListener" name="user.fullname" value="${user?.fullname}">
+        <span class="fieldError">${errors.forKey('user.fullname')}</span>
+    </p>
+    <p class="field">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" class="keyEventListener" name="user.password" value="${user?.password}">
+        <span class="fieldError">${errors.forKey('user.password')}</span>
+    </p>
+    <p class="field">
+        <label for="confirm">Confirmation:</label>
+        <input type="password" id="confirm" class="keyEventListener" name="confirm" value="${confirm}">
+        <span class="fieldError">${errors.forKey('confirm')}</span>
+    </p>
+    <p class="buttons">
+        <a href="#" onclick="document.register.submit();">S'enregistrer</a>
+    </p>
+#{/form}

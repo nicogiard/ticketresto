@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+#{ifErrors}
+<errors>
+    <error>${errors[0]}</error>
+</errors>
+#{/ifErrors}
+#{else}
+<calcul>
+	<nombrePart>${nombrePart}</nombrePart>
+	<totalAddition>${totalAddition}</totalAddition>
+	<resteAPayer>${resteAPayer}</resteAPayer>
+</calcul>
+#{/else}

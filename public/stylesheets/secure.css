@@ -1,0 +1,33 @@
+#login form {
+    border:1px solid #B1B1B1;
+    padding: 3px;
+    text-align: left;
+}
+#login form p { margin: 3px; }
+#username-field { margin-top: 10px !important; }
+#username-field label, #password-field label {
+    display: block;
+    width: 130px;
+    float: left;
+    margin-right: 5px;
+    color: #333;
+}
+#username-field input, #password-field input {
+    width: 120px;
+    font-size: 13px;
+}
+#remember-field {
+    font-size: 12px;
+    color: #666;
+}
+.panel #remember-field label { float: none; }
+#login form p#signin-field { margin-top: 15px; }
+#login .error, #login .success  {
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+#login .error { background: #c00 !important; }
+#login .success { background: #008800 !important; }
