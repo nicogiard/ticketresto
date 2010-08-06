@@ -5,29 +5,29 @@
 # Home page
 GET     /                                       Application.index
 
-GET     /ticket/			                    Application.indexTicket
-GET     /division/			                    Application.indexDivision
+GET     /ticket/			        Application.indexTicket
+GET     /division/			        Application.indexDivision
 
 # retour accueil si get
 GET     /ticket/calculate                       Application.indexTicket
 GET     /division/calculate                     Application.indexDivision
 
-GET		/register								Application.register
-POST	/register								Application.saveRegister
+GET	/register				Application.register
+POST	/register				Application.saveRegister
 
 # Les POST
-POST	/ticket/calculate						Application.calculateTicket
-POST	/division/calculate						Application.calculateDivision
+POST	/ticket/calculate			Application.calculateTicket
+POST	/division/calculate			Application.calculateDivision
 
 # Les POST pour API
-POST 	/api/ticket/calculate					Application.calculateTicketXml(format:'xml')
-POST 	/api/division/calculate					Application.calculateDivisionXml(format:'xml')
+POST 	/api/ticket/calculate			Application.calculateTicketXml(format:'xml')
+POST 	/api/division/calculate			Application.calculateDivisionXml(format:'xml')
 
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
 # import these default routes as :
-*		/               						module:secure
+*	/               			module:secure
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
