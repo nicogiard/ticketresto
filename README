@@ -1,3 +1,20 @@
 ticketresto project
 
-It's a play framework webapp to help people to colaculate bill amount
+@author nicogiard@gmail.com
+
+###########################
+
+It's a play framework webapp to help people to calculate bill amount
+
+###########################
+
+If you're going to use Eclipse, you should execute "play eclipsify".
+If you're going to use Netbeans, you should execute "play netbeansify".
+
+When you're ready, execute "play run".
+
+Play indicates you the following line when it's done :
+> Application 'ticketresto' is now started !
+> Listening for HTTP on port 9000 ...
+
+You can now open your web browser and go to http://localhost:9000
