@@ -1,11 +1,25 @@
-# Les ligne commençant par '#' sont des commentaires.
-
-.classpath
-.project
-.settings
-.svn
-db/
-eclipse/
-logs/
-tmp/
-
+# Ignore all dotfiles...
+.*
+# except for .gitignore
+!.gitignore
+ 
+# Ignore Play! working directory #
+db
+data
+documents
+eclipse
+lib
+log
+logs
+tmp
+out
+test-result
+eclipse
+nbproject
+*.iml
+*.ipr
+*.iws
+server.pid
+modules
+cobertura.ser
+atlassian-ide-plugin.xml

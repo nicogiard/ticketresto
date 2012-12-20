@@ -147,6 +147,8 @@ nav img#logout-icon {
 	margin: -11px -10px -14px;
 	padding: 11px 10px 14px;
 	text-shadow:0 -1px 1px #111111;
+    width: 100%;
+    display: block;
 }
 .panel .success {
 	background-color:#C8FFA4;
